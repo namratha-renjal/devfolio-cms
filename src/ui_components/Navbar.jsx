@@ -1,11 +1,11 @@
 import { Switch } from "@/components/ui/switch"
 import { FaHamburger } from "react-icons/fa";
 import ResponsiveNavbar from "./ResponsiveNavbar";
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, NavLink } from "react-router-dom";
 
-const Navbar = () => {
-    const [showNavBar, setShowNavBar] = useState(false);
+const Navbar = ({darkMode, handleDarkModeToggle}) => {  
+  const [showNavBar, setShowNavBar] = useState(false);
   return (
     <>
         <nav className="max-container padding-x py-6 flex justify-between items-center  gap-6 sticky top-0 z-10 bg-[#FFFFFF] dark:bg-[#141624]">
@@ -20,7 +20,7 @@ const Navbar = () => {
           <li className="font-semibold">Create post</li>
         </ul>
 
-        <Switch />
+        <Switch onCheckedChange ={handleDarkModeToggle} checked={darkMode}/>
         
         <FaHamburger className="text-2xl cursor-pointer hidden max-md:block dark:text-white" onClick={()=>setShowNavBar(curr => !curr)}/>
         </nav>
