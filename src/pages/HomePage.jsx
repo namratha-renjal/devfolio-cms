@@ -16,16 +16,34 @@ const HomePage = () => {
     placeholderData: keepPreviousData,
   })
 
-  console.log(data)
+ //console.log(data)
   const blogs = data?.results || []
   const numberOfPages = Math.ceil((data?.count || 0) / numberOfBlogsPerPage)
-  console.log(numberOfPages)
+  //console.log(numberOfPages)
+
+  function handleSetPage(val){
+    setPage(val)
+  }
+
+  function handleNextPage(){
+    setPage((curr) => curr + 1)
+  }
+
+  function handlePreviousPage(){
+    setPage((curr) => curr - 1)
+  }
 
   return (
     <>
         <Header />
         <BlogConatiner isPending={isPending} blogs={blogs} />
-        <PagePagination numberOfPages = {numberOfPages}/>
+        <PagePagination 
+          numberOfPages = {numberOfPages} 
+          page={page} 
+          handleSetPage={handleSetPage} 
+          handleNextPage={handleNextPage} 
+          handlePreviousPage={handlePreviousPage} 
+        />
     </>
   )
 }

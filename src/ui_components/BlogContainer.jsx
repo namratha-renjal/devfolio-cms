@@ -6,7 +6,7 @@ const BlogConatiner = ({isPending, blogs}) => {
   if(isPending){
     return <Spinner />
    }
-   console.log(blogs)
+   //console.log(blogs)
   return (  
     <section className="padding-x py-6  max-container">
     <h2 className="font-semibold text-xl mb-6 dark:text-white text-center">
