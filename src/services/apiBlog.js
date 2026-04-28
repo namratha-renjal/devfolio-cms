@@ -10,3 +10,14 @@ export async function  getBlogs(page){
         throw error
     }
 }
+
+export async function getBlog(slug){
+    try{
+        const response = await api.get(`blogs/${slug}`)
+        return response.data
+    }
+    catch(error){
+        console.error('Error fetching blog:', error)
+        throw error
+    }
+}
