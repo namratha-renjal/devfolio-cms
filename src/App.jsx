@@ -3,6 +3,7 @@ import AppLayout from "./ui_components/AppLayout"
 import HomePage from "./pages/HomePage"
 import ProfilePage from "./pages/ProfilePage"
 import BlogPage from "./pages/BlogPage" 
+import SignUpPage from "./pages/SignUpPage"
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 
 // Create a client
@@ -17,6 +18,7 @@ const App = () => {
             <Route index element={<HomePage />} />
             <Route path="blogs/:slug" element={<BlogPage />} />
             <Route path="profile" element={<ProfilePage />} />
+            <Route path="signup" element={<SignUpPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
