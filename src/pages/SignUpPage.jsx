@@ -4,7 +4,7 @@ import {Field, FieldLabel, FieldError} from '@/components/ui/field'
 import { useForm } from 'react-hook-form'
 import { useMutation } from '@tanstack/react-query'
 import { data } from 'react-router-dom'
-//import { SmallSpinner } from '@/components/Loaders'
+import SmallSpinner from '@/ui_components/SmallSpinner.jsx'
 import { registerUser } from '@/services/apiBlog'
 import { toast } from 'react-toastify'
 

@@ -13,11 +13,15 @@ const Navbar = ({darkMode, handleDarkModeToggle}) => {
           DevFolio
         </Link>
         <ul className="flex items-center  justify-end gap-9 text-[#3B3C4A] lg:flex-1 max-md:hidden dark:text-[#FFFFFF]">
-          {/* <li><NavLink className={({isActive}) => isActive? "active": ""} to="/profile">Hi, Nami</NavLink></li> */}
+          {/* <li><NavLink className={({isActive}) => isActive? "active": ""} to="/profile">Hi, Nami</NavLink></li> 
           <li>Logout</li>
-          <li>Login</li>
-          <li><NavLink className={({isActive}) => isActive? "active": ""} to="/signup">Register</NavLink></li>
-          <li className="font-semibold">Create post</li>
+          <li>Login</li> */}
+          <li>
+            <NavLink className={({isActive}) => isActive? "active": ""} to="/signup">Register</NavLink>
+          </li>
+          <li className="font-semibold">
+            <NavLink className={({isActive}) => isActive? "active": ""} to="/create">Create post</NavLink>
+          </li>
         </ul>
 
         <Switch onCheckedChange ={handleDarkModeToggle} checked={darkMode}/>
