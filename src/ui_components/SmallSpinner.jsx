@@ -7,7 +7,7 @@ const override = {
   borderColor: "purple",
 };
 
-const Spinner = () => {
+const SmallSpinner = () => {
   return (
     <ClipLoader
         cssOverride={override}

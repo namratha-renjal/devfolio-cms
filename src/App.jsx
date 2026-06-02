@@ -6,6 +6,8 @@ import ProfilePage from "./pages/ProfilePage"
 import BlogPage from "./pages/BlogPage" 
 import SignUpPage from "./pages/SignUpPage"
 import CreatePostPage from "./pages/CreatePostPage"
+import LoginPage from "./pages/LoginPage"
+import ProtectedRoute from './ui_components/ProtectedRoute'
 
 // Create a client
 const queryClient = new QueryClient()
@@ -20,7 +22,8 @@ const App = () => {
             <Route path="blogs/:slug" element={<BlogPage />} />
             <Route path="profile" element={<ProfilePage />} />
             <Route path="signup" element={<SignUpPage />} />
-            <Route path="create" element={<CreatePostPage />} />
+            <Route path="signin" element={<LoginPage />} />
+            <Route path="create" element={<ProtectedRoute><CreatePostPage /></ProtectedRoute>} />
           </Route>
         </Routes>
       </BrowserRouter>
