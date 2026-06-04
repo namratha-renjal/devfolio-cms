@@ -35,3 +35,15 @@ export async function registerUser(userData){
         throw new Error(error)
     }
 }
+
+export async function signin(data){
+    try{
+        const response = await api.post("api/token/", data)
+        return response.data
+    }catch(err){
+        if(err.status === 401){
+            throw new Error("Invalid credentials")
+        }
+        throw new Error(err)
+    }
+}

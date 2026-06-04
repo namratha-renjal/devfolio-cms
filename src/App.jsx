@@ -23,7 +23,7 @@ const App = () => {
             <Route path="profile" element={<ProfilePage />} />
             <Route path="signup" element={<SignUpPage />} />
             <Route path="signin" element={<LoginPage />} />
-            <Route path="create" element={<ProtectedRoute><CreatePostPage /></ProtectedRoute>} />
+            <Route path="create" element={<ProtectedRoute> <CreatePostPage /> </ProtectedRoute>} />
           </Route>
         </Routes>
       </BrowserRouter>
