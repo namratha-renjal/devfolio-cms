@@ -47,3 +47,13 @@ export async function signin(data){
         throw new Error(err)
     }
 }
+
+export async function getUsername(){
+    try{
+        const response = await api.get("get_username/")
+        return response.data
+    }
+    catch(error){
+        throw new Error(error.message)
+    }
+}

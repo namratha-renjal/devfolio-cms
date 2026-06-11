@@ -7,8 +7,9 @@ import { useForm } from 'react-hook-form'
 import { useMutation } from '@tanstack/react-query'
 import { signin } from '@/services/apiBlog'
 import { toast } from 'react-toastify'
+import { getUsername } from '@/services/apiBlog'
 
-const LoginPage = () => {
+const LoginPage = ({setIsAuthenticated, setUsername}) => {
 
     const { register, handleSubmit, formState } = useForm();
     const { errors } = formState;
@@ -22,6 +23,9 @@ const LoginPage = () => {
         //storing access and refresh token in local storage
         localStorage.setItem("access", response.access)
         localStorage.setItem("refresh", response.refresh)
+        setIsAuthenticated(true)
+        getUsername().then(response => setUsername(response.username))
+        
         //storing path of protected page that sent user to login page        
         const from = location?.state?.from?.pathname || "/"
         //going back to protected page
