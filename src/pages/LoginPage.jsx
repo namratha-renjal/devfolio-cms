@@ -87,8 +87,8 @@ const LoginPage = ({setIsAuthenticated, setUsername}) => {
           {mutation.isPending ? (
             <>
               {" "}
-              <SmallSpinner />{" "}
-              <small className="text-[16px]">Signing in...</small>{" "}
+              <SmallSpinner text=" Signing in... "/>
+              
             </>
           ) : (
             <small className="text-[16px]">Signin</small>

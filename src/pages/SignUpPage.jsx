@@ -131,7 +131,7 @@ const SignUpPage = () => {
 
       <div className="w-full flex items-center justify-center flex-col my-4">
         <button className="bg-[#4B6BFB] text-white w-full py-3 px-2 rounded-md flex items-center justify-center gap-2">
-            {mutation.isLoading ? <><SmallSpinner /> <small className="text-[16px]">Creating User ...</small></>: <small className="text-[16px]">Signup</small>}
+            {mutation.isLoading ? <SmallSpinner text = "Creating User ..."/> : <small className="text-[16px]">Signup</small>}
         </button>
         <p className="text-[14px]">
           Already have an account? Sign in
